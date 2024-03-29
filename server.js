@@ -22,6 +22,6 @@ app.post("/api", (req, res) => {
 });
 
 connect().then( () => {
-    const PORT = 5001;
+    const PORT = process.env.PORT || 5001;
     app.listen(PORT, () => console.log(`listing to port ${PORT}`));
 });
