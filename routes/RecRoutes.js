@@ -5,16 +5,16 @@ const RecRouter = express.Router();
 const checkToken = require("../middleware/checkToken")
 
 const{
-    userLogin,
-    userToken,
-    userReg,
-    userAppointment
-} = require("../controllers/UserControllers");
+    RecLogin,
+    RecReg,
+    RecToken,
+    RecNewHost
+} = require("../controllers/RecControllers");
 
-UserRouter.post("/login",userLogin)
-UserRouter.post("/token", checkToken, userToken)
-UserRouter.post("/reg", userReg)
-UserRouter.get("/bookapp", userAppointment)
+RecRouter.post("/login",RecLogin)
+RecRouter.post("/token", checkToken, RecToken)
+RecRouter.post("/reg", RecReg)
+RecRouter.post("/newPost", RecNewHost)
 
 module.exports = RecRouter
 
