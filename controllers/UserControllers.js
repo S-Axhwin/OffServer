@@ -30,7 +30,7 @@ const userToken =  ( req, res ) => {
 const userListing = async (req, res) => {
     const data = await JobReq.find();
     console.log(data);
-    res.send("ok")
+    res.json({list:data})
 }
 
 const userReg =  async( req, res ) => {
