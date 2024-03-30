@@ -15,7 +15,7 @@ const RecLogin = async ( req, res ) => {
         const checkpass = await bcryptjs.compare(password, isExist.password)
         if(checkpass == true){
             const token = await jwt.sign({gmail: isExist.gmail}, 'pannada', {expiresIn: '5m'})
-            res.status(200).json({status: true, reason: 'loggedin', token, gmail:isExist.gmail});
+            res.status(200).json({status: true, reason: 'loggedin', token, gmail:isExist.gmail, isRec: true});
         } else {
             res.status(400).json({status: false, reason: 'password incorrect'});
         }   
