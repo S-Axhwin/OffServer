@@ -2,8 +2,7 @@ const RecDB = require("../models/RecMode");
 const JobReqModel = require("../models/JobReq")
 const bcryptjs = require('bcryptjs');
 const jwt = require("jsonwebtoken");
-
-
+const Japp = require("../models/JobApplication")
 
 const RecLogin = async ( req, res ) => {
     const { gmail, password } = req.body
@@ -73,6 +72,11 @@ const RecNewHost = async(req, res) => {
     
 }
 
+const allJoblist = async (req, res) => {
+    const data = await Japp.find({})
+    return res.json({data})
+}
+
 
 
 
@@ -81,5 +85,6 @@ module.exports = {
     RecToken,
     RecReg,
     RecAppointment,
-    RecNewHost
+    RecNewHost,
+    allJoblist
 }

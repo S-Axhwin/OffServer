@@ -54,11 +54,12 @@ const userReg =  async( req, res ) => {
 
 const AppForJob = (req, res) => {
     const { id, gmail, experience, skills } = req.body;
+    console.log(id, gmail, experience, skills);
     JobApp.create({id, gmail, experience, skills })
     .then(() => {
         return res.json({status: true, reason: 'created applicatioin'})
     })
-    .catch(() => res.json({status: 'reached endpoint'}))
+    .catch((e) => res.status(400).json({status: 'reached endpoint'}))
 }
 const userAppointment =  ( req, res ) => {
     res.json({"@": 'userAppointment'})
