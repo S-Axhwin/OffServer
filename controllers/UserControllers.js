@@ -52,8 +52,11 @@ const userReg =  async( req, res ) => {
     return res.status(400).json({state: false, reason: 'may be user already exist'});
 }
 
-
-
+const AppForJob = (req, res) => {
+    const { id, gmail } = req.body;
+    console.log(id, gmail);
+    res.json({status: 'reached endpoint'})
+}
 const userAppointment =  ( req, res ) => {
     res.json({"@": 'userAppointment'})
 }
@@ -67,6 +70,6 @@ module.exports = {
     userLogin,
     userToken,
     userReg,
-    userAppointment,
+    AppForJob,
     userListing
 }
