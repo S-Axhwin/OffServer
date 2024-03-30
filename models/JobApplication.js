@@ -1,9 +1,9 @@
 const mongoose = require("mongoose")
 
 const JobSchema = {
-    title: {
+    gmail: {
         type: String,
-        required: true,
+        required: true
     },
     experience: {
         type: String,

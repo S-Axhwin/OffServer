@@ -2,7 +2,7 @@ const UserDB = require("../models/userMode")
 const bcryptjs = require('bcryptjs');
 const jwt = require("jsonwebtoken");
 const JobReq = require("../models/JobReq")
-
+const JobApp = require("../models/JobApplication")
 
 const userLogin = async ( req, res ) => {
     const { gmail, password } = req.body
@@ -53,9 +53,12 @@ const userReg =  async( req, res ) => {
 }
 
 const AppForJob = (req, res) => {
-    const { id, gmail } = req.body;
-    console.log(id, gmail);
-    res.json({status: 'reached endpoint'})
+    const { id, gmail, experience, skills } = req.body;
+    JobApp.create({id, gmail, experience, skills })
+    .then(() => {
+        return res.json({status: true, reason: 'created applicatioin'})
+    })
+    .catch(() => res.json({status: 'reached endpoint'}))
 }
 const userAppointment =  ( req, res ) => {
     res.json({"@": 'userAppointment'})
