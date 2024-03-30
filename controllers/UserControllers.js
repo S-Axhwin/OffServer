@@ -1,7 +1,7 @@
 const UserDB = require("../models/userMode")
 const bcryptjs = require('bcryptjs');
 const jwt = require("jsonwebtoken");
-
+const JobReq = require("../models/JobReq")
 
 
 const userLogin = async ( req, res ) => {
@@ -25,6 +25,12 @@ const userLogin = async ( req, res ) => {
 
 const userToken =  ( req, res ) => {
     res.json({gmail: req.gmail})
+}
+
+const userListing = async (req, res) => {
+    const data = await JobReq.find();
+    console.log(data);
+    res.send("ok")
 }
 
 const userReg =  async( req, res ) => {
@@ -61,5 +67,6 @@ module.exports = {
     userLogin,
     userToken,
     userReg,
-    userAppointment
+    userAppointment,
+    userListing
 }
