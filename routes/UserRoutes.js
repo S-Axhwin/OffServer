@@ -15,7 +15,7 @@ const{
 UserRouter.post("/login",userLogin)
 UserRouter.post("/token", checkToken, userToken)
 UserRouter.post("/reg", userReg)
-UserRouter.get("/bookapp", AppForJob)
+UserRouter.post("/bookapp", AppForJob)
 UserRouter.get("/listing", userListing)
 
 module.exports = UserRouter
