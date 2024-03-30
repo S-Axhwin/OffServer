@@ -5,7 +5,7 @@ const JobSchema = {
         type: String,
         required: true,
     },
-    exprience: {
+    experience: {
         type: String,
         required: true
     },

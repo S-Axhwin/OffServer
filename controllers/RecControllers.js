@@ -54,8 +54,8 @@ const RecAppointment =  ( req, res ) => {
 }
 
 const RecNewHost = async(req, res) => {
-    const { title, skills, exprience, salary } = req.body
-    console.log(title, skills, exprience, salary);
+    const { title, skills, experience, salary } = req.body
+    console.log(title, skills, experience, salary);
     if(!(title && exprience && salary))  return res.status(400).json({status: false, reason: 'missing feilds'});
     const resp = JobReqModel.create({title, skills, exprience, salary, id: Date.now()})
     .then(r => {
