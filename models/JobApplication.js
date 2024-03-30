@@ -17,6 +17,6 @@ const JobSchema = {
     }
 }
 
-const JobReqModel = mongoose.model("JobRequirement", JobSchema)
+const JobReqModel = mongoose.model("JobApplication", JobSchema)
 
 module.exports = JobReqModel;
