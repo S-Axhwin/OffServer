@@ -4,6 +4,8 @@ const express = require('express');
 
 const cors = require("cors")
 
+const app = express();
+app.use(cors());
 
 //connection
 const { connect } = require("./utils/connect")
@@ -11,9 +13,7 @@ const { connect } = require("./utils/connect")
 //UserRouter importing
 const UserRouter = require("./routes/UserRoutes");
 const RecRouter = require("./routes/RecRoutes")
-const app = express();
 app.use(express.json());
-app.use(cors());
 app.use("/user", UserRouter);
 app.use("/rec", RecRouter)
 
