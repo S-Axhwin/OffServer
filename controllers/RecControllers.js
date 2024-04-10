@@ -72,8 +72,9 @@ const RecNewHost = async(req, res) => {
     
 }
 
-const allJoblist = async (req, res) => {
-    const data = await Japp.find({})
+const Joblist = async (req, res) => {
+    const recGmail = req.recGmail;
+    const data = await Japp.find({recGmail});
     return res.json({data})
 }
 
@@ -86,5 +87,5 @@ module.exports = {
     RecReg,
     RecAppointment,
     RecNewHost,
-    allJoblist
+    Joblist
 }
