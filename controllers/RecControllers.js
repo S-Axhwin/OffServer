@@ -81,8 +81,11 @@ const Joblist = async (req, res) => {
 
 const RecGetbyId = async (req, res) => {
     const recGmail = req.recGmail;
-    const data = await Japp.find({recGmail});
-    return res.json({id: data.id})
+    const data = await Japp.find({recGmail})
+    .then((res) => {
+        return res.json({id: res.id})
+    })
+    return res.json({status: false})
 }
 
 module.exports = {
