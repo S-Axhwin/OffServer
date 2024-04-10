@@ -5,6 +5,9 @@ const JobSchema = {
         type: String,
         required: true,
     },
+    RecGmail: {
+        type: String
+    },
     experience: {
         type: String,
         required: true

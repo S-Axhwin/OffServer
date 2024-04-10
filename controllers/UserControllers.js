@@ -53,9 +53,9 @@ const userReg =  async( req, res ) => {
 }
 
 const AppForJob = (req, res) => {
-    const { id, gmail, experience, skills } = req.body;
+    const { id, gmail, experience, skills, recGmail } = req.body;
     console.log(id, gmail, experience, skills);
-    JobApp.create({id, gmail, experience, skills })
+    JobApp.create({id, gmail, experience, skills, recGmail })
     .then(() => {
         return res.json({status: true, reason: 'created applicatioin'})
     })
