@@ -79,7 +79,11 @@ const Joblist = async (req, res) => {
 }
 
 
-
+const RecGetbyId = async (req, res) => {
+    const recGmail = req.recGmail;
+    const data = await Japp.find({recGmail});
+    return res.json({id: data.id})
+}
 
 module.exports = {
     RecLogin,
@@ -87,5 +91,6 @@ module.exports = {
     RecReg,
     RecAppointment,
     RecNewHost,
-    Joblist
+    Joblist,
+    RecGetbyId
 }
