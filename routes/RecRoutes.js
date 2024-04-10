@@ -16,7 +16,7 @@ RecRouter.post("/login",RecLogin)
 RecRouter.post("/token", checkToken, RecToken)
 RecRouter.post("/reg", RecReg)
 RecRouter.post("/newPost", RecNewHost)
-RecRouter.get("/job", Joblist);
+RecRouter.post("/job", Joblist);
 
 module.exports = RecRouter
 
